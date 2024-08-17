@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Marina TS</title>
+    <link rel="icon" href="https://img.icons8.com/ios/50/m.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="particles.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    <div class="text-container">
+        Marina TS - Portfolio
+    </div>
+</header>
+
+<div class="side-menu" id="sideMenu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="main-content">
+    <div class="profile-photo">
+        <img src="marina.jpg" alt="Profile Photo">
+    </div> 
+
+    <div id="about"> <br> <br>
+        <h2>About</h2>
+        <p>Hey there! I’m Marina TS, currently wrangling data as an MSc Data Science student at Christ University, Bangalore. I’ve got a knack for digging into data 
+            and making sense of it, but I also can’t resist the urge to dabble in frontend development. Imagine someone who loves crunching numbers and building cool, 
+            user-friendly designs—that’s me! I’m all about mixing machine learning with slick web interfaces to create apps that not only work like magic but also look great.
+             Right now, I’m geeking out over things like Large Language Models (LLMs) and knowledge graphs, 
+            trying to figure out how they can make my projects even more awesome. Let’s just say I’m on a mission to make data and design the perfect duo!</p>
+    </div>
+    <div id="projects">
+    <h2>Projects</h2> <br><br><br>
+    <div class="carousel-container">
+        <button class="control-btn left" onclick="moveCarousel(-1)">‹</button>
+        <div class="carousel-track arc-layout">
+            <div class="carousel-item">
+    <a href="https://betelrigel.github.io/Namaste-Nagasandra/" target="_blank">
+        <img src="bangalore.jpg" alt="Image 1">
+    </a>
+    <div class="project-title" style="text-align: center; font-size: 1.1em; margin-top: 10px; color: #fff;">
+        Namaste Nagasandra!
+    </div>
+</div>
+
+            <div class="carousel-item">
+                <a href="https://betelrigel.github.io/Olympics-Visualization/" target="_blank">
+                    <img src="olympics.jpg" alt="Image 2">
+                </a>
+                <div class="project-title" style="text-align: center; font-size: 1.1em; margin-top: 10px; color: #fff;">
+                    Olympics Visualization
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="https://github.com/Betelrigel/Movie-Expert-Chatbot" target="_blank">
+                    <img src="movie.jpg" alt="Image 3">
+                </a>
+                <div class="project-title" style="text-align: center; font-size: 1.1em; margin-top: 10px; color: #fff;">
+                    Movie Expert Chatbot
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="https://github.com/Betelrigel/Thyroid-Disease-Detection-App" target="_blank">
+                    <img src="pills.jpg" alt="Image 4">
+                </a>
+                <div class="project-title" style="text-align: center; font-size: 1.1em; margin-top: 10px; color: #fff;">
+                    Thyroid Disease Detection
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="https://betelrigel.github.io/Cats/" target="_blank">
+                    <img src="cat.jpg" alt="Image 5">
+                </a>
+                <div class="project-title" style="text-align: center; font-size: 1.1em; margin-top: 10px; color: #fff;">
+                    All about Cats!
+                </div>
+            </div>
+        </div>
+        <button class="control-btn right" onclick="moveCarousel(1)">›</button>
+    </div>
+</div>
+
+
+
+     <br><br><br><br><br>
+
+    <div id="skills"><br><br>
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">D3.js</span>
+            <span class="skill">Three.js</span>
+            <span class="skill">ReactJS</span>
+            <span class="skill">Tailwind</span>
+            <span class="skill">Tableau</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">MongoDB</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Neo4j</span>
+            <span class="skill">Large Language Models</span>
+            <span class="skill">Deep Learning</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">WordPress</span>
+            <span class="skill">API Integration</span>
+        </div>
+    </div><br><br><br><br><br><br>
+
+    <div id="contact">
+        <h2>Contact</h2>
+        <p>You can reach me through the following platforms:</p>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+                <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/FFFFFF/linkedin.png" alt="linkedin"/><br>
+                LinkedIn
+            </a>
+            <a href="mailto:your-email@example.com" class="contact-link">
+                <img width="64" height="64" src="https://img.icons8.com/sf-black-filled/64/FFFFFF/new-post.png" alt="Email"/><br>
+                Email
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+                <img width="64" height="64" src="https://img.icons8.com/ios-filled/50/FFFFFF/github.png" alt="github"/><br>
+                GitHub
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <img src="fog2.png" alt="Footer Image">
+</footer>
+
+<script>
+    function toggleMenu() {
+        var sideMenu = document.getElementById('sideMenu');
+        if (sideMenu.style.display === 'block') {
+            sideMenu.style.display = 'none';
+        } else {
+            sideMenu.style.display = 'block';
+        }
+    }
+
+    function moveCarousel(direction) {
+        var track = document.querySelector('.carousel-track');
+        var items = Array.from(track.children);
+        var firstItem = items[0];
+        var itemWidth = firstItem.getBoundingClientRect().width;
+
+        track.style.transition = 'transform 0.5s ease-in-out';
+        var currentTransform = getComputedStyle(track).transform;
+        var matrix = new WebKitCSSMatrix(currentTransform);
+        var newTransform = matrix.m41 + (direction * itemWidth);
+
+        track.style.transform = `translateX(${newTransform}px)`;
+    }
+</script>
+
+</body>
+</html>
