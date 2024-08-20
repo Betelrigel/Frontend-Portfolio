@@ -9,7 +9,7 @@ body {
     margin: 0;
     background-color: #000;
     color: #fff;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 header {
@@ -116,99 +116,57 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .carousel-track {
     display: flex;
-    width: auto;
+    width: fit-content; /* Ensure the track width adjusts to content */
     height: 100%;
-    transform: translateX(10%); /* Adjust the value to move the cards to the right */
     transition: transform 0.5s ease;
+    margin: 0 auto; /* Center the track */
 }
 
-/* Updated Carousel Item Size */
 .carousel-item {
-    flex: 0 0 12%; /* Adjust the flex-basis to make items smaller */
-    height: 400px; /* Reduce the height */
-    width: 250px; /* Reduce the width */
-    margin: 0 20px; /* Adjust the spacing between items */
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    height: 400px; /* Height adjusted for vertical images */
+    width: 250px; /* Width adjusted for vertical images */
+    margin: 0 10px; /* Reduced margin for better fit */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
-    opacity: 0.8; /* Slightly transparent for scattered effect */
+    opacity: 0.8;
 }
 
-/* Carousel Item Images */
 .carousel-item img {
     width: 100%;
     height: 310px;
-    width: 200px; /* Maintain aspect ratio */
     object-fit: cover;
 }
+
 .carousel-item:hover {
-    opacity: 1; /* Full opacity on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More prominent shadow */
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    z-index: 2; /* Ensure the hovered item is above others */
-}
-
-
-.control-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgb(5, 5, 5);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.control-btn.left {
-    left: 10px;
-}
-
-.control-btn.right {
-    right: 10px;
-}
-
-/* Adjusting Arc Layout to Smaller Cards */
-.arc-layout .carousel-item {
-    transform-origin: center;
-}
-
-.arc-layout .carousel-item:nth-child(1) {
-    transform: translateX(-65%) translateY(-25px) rotate(-15deg);
-}
-
-.arc-layout .carousel-item:nth-child(2) {
-    transform: translateX(-45%) translateY(-15px) rotate(-10deg);
-}
-
-.arc-layout .carousel-item:nth-child(3) {
-    transform: translateX(-25%) translateY(-10px) rotate(-5deg);
-}
-
-.arc-layout .carousel-item:nth-child(4) {
-    transform: translateX(0) translateY(0) rotate(0deg);
-    z-index: 1;
     opacity: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    z-index: 2;
 }
 
-.arc-layout .carousel-item:nth-child(5) {
-    transform: translateX(25%) translateY(-10px) rotate(5deg);
+.carousel-item .project-title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 1em; /* Adjust font size for better fit */
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7); /* Darker background for readability */
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-.arc-layout .carousel-item:nth-child(6) {
-    transform: translateX(45%) translateY(-15px) rotate(10deg);
-}
-
-.arc-layout .carousel-item:nth-child(7) {
-    transform: translateX(65%) translateY(-25px) rotate(15deg);
-}
+/* Removed control buttons */
 
 /* Contact Section */
 .contact-links {
@@ -277,13 +235,16 @@ footer img {
     position: relative;
     background: url('clouds.png') no-repeat center center;
     background-size: cover;
-    padding: 250px;
+    padding: 280px 30px; /* Adjusted padding for smaller screens */
     border-radius: 8px;
-    color: rgb(0, 0, 0);
+    color: #000;
     z-index: 1;
     margin: 0;
-    font-size: 23px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px; /* Adjusted font size for smaller screens */
+    line-height: 1.5; /* Improved line spacing for readability */
+    text-align: center; /* Centered text for better appearance */
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 #about::before {
@@ -293,7 +254,7 @@ footer img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 0;
     border-radius: 8px;
 }
@@ -310,7 +271,7 @@ canvas {
     z-index: -1;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Prevent clicks on the canvas */
+    pointer-events: none;
 }
 
 .skills-container {
@@ -334,31 +295,39 @@ canvas {
     background-color: #555;
 }
 
+/* Ensure project title fits within carousel item */
 .project-title {
     text-align: center;
-    font-size: 1em; /* Slightly smaller text for the smaller cards */
-    margin-top: 8px;
-    color: #fff; /* or another color that fits your design */
+    font-size: 25px; /* Adjust font size for better fit */
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #fff;
+    overflow: hidden; /* Ensure text does not overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-.carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 250px; /* Adjust this as needed */
-    animation: floating 3s ease-in-out infinite; /* Apply the floating animation */
-}
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: auto; /* Allow the height to adjust based on content */
+        padding: 10px; /* Add padding for better spacing */
+    }
 
-/* Floating animation */
-@keyframes floating {
-    0% {
-        transform: translateY(0);
+    .carousel-item {
+        height: auto; /* Allow height to adjust based on content */
+        width: 80%; /* Adjust width for smaller screens */
+        margin: 0 5px; /* Adjust margin for smaller screens */
     }
-    50% {
-        transform: translateY(-10px);
+
+    .text-container {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
-    100% {
-        transform: translateY(0);
+
+    #about p {
+        padding: 50px 10px; /* Adjust padding for better spacing on mobile */
+        font-size: 16px; /* Further reduce font size for smaller screens */
     }
 }
